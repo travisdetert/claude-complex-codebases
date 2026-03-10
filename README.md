@@ -1,0 +1,117 @@
+# Navigating Complex Codebases with Claude Code
+
+A practical, modular guide for using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) to understand, navigate, and work effectively in large or unfamiliar codebases.
+
+Whether you've never used Claude Code or you're looking for advanced workflows, this guide series walks you through everything — from installation to ongoing maintenance practices.
+
+---
+
+## Roadmap
+
+```mermaid
+flowchart LR
+    A["01\nGetting Started"] --> B["02\nSetup &\nConfiguration"]
+    B --> C["03\nCodebase\nOrientation"]
+    C --> D["04\nArchitecture &\nDependencies"]
+    D --> E["05\nCodebase\nArchaeology"]
+    E --> F["06\nTask\nExecution"]
+    F --> G["07\nDiagrams &\nDocs"]
+    G --> H["08\nOngoing\nPractices"]
+    H --> I["09\nAnti-\nPatterns"]
+    I --> J["10\nMigration\nPlanning"]
+    J --> K["11\nLocal Env\nSetup"]
+    K --> L["12\nDebugging &\nTroubleshooting"]
+    L --> M["13\nCode\nReview"]
+    M --> N["14\nTesting\nStrategies"]
+    N --> O["15\nSecurity\nAnalysis"]
+    O --> P["16\nLegacy\nCode"]
+    P --> Q["17\nCollaboration\n& Teams"]
+
+    style A fill:#e8f5e9,stroke:#2e7d32
+    style B fill:#e8f5e9,stroke:#2e7d32
+    style C fill:#e3f2fd,stroke:#1565c0
+    style D fill:#e3f2fd,stroke:#1565c0
+    style E fill:#e3f2fd,stroke:#1565c0
+    style F fill:#fff3e0,stroke:#e65100
+    style G fill:#fff3e0,stroke:#e65100
+    style H fill:#f3e5f5,stroke:#6a1b9a
+    style I fill:#f3e5f5,stroke:#6a1b9a
+    style J fill:#fff3e0,stroke:#e65100
+    style K fill:#fff3e0,stroke:#e65100
+    style L fill:#fff3e0,stroke:#e65100
+    style M fill:#fff3e0,stroke:#e65100
+    style N fill:#fff3e0,stroke:#e65100
+    style O fill:#fff3e0,stroke:#e65100
+    style P fill:#fff3e0,stroke:#e65100
+    style Q fill:#f3e5f5,stroke:#6a1b9a
+```
+
+**Green** = Setup | **Blue** = Understanding | **Orange** = Doing | **Purple** = Sustaining
+
+---
+
+## Guides
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 01 | [Getting Started](guides/01-getting-started.md) | Installation, first launch, key concepts, your first 5-minute exploration |
+| 02 | [Setup & Configuration](guides/02-setup-and-configuration.md) | CLAUDE.md, permissions, the `.claude/` directory, MCP servers, team workflows |
+| 03 | [Codebase Orientation](guides/03-codebase-orientation.md) | Big-picture analysis, entry points, request tracing, strategies by project type |
+| 04 | [Architecture & Dependencies](guides/04-architecture-and-dependencies.md) | Build systems, databases, dependency analysis, architecture diagrams |
+| 05 | [Codebase Archaeology](guides/05-codebase-archaeology.md) | Git history, pain points, cross-cutting concerns, tribal knowledge |
+| 06 | [Task Execution](guides/06-task-execution.md) | Plan mode, tests-first, blast radius, making changes, working with PRs |
+| 07 | [Diagrams & Documentation](guides/07-diagrams-and-documentation.md) | Mermaid diagram catalog, generating docs, onboarding materials |
+| 08 | [Ongoing Practices](guides/08-ongoing-practices.md) | Session management, CLAUDE.md evolution, verification habits, knowledge building |
+| 09 | [Anti-Patterns](guides/09-anti-patterns.md) | Common mistakes with examples, consequences, and fixes |
+| 10 | [Migration Planning](guides/10-migration-planning.md) | Assessing scope, incremental strategies, database migrations, rollback planning |
+| 11 | [Local Environment Setup](guides/11-local-environment-setup.md) | From `git clone` to running — Docker, databases, services, troubleshooting setup failures |
+| 12 | [Debugging & Troubleshooting](guides/12-debugging-and-troubleshooting.md) | Systematic debugging — logs, stack traces, performance, flaky tests, the debugging decision tree |
+| 13 | [Code Review](guides/13-code-review.md) | Reviewing PRs — understanding diffs, tracing impact, spotting issues, writing constructive comments |
+| 14 | [Testing Strategies](guides/14-testing-strategies.md) | Writing effective tests — unit/integration/e2e, edge cases, mocking, hard-to-test code |
+| 15 | [Security Analysis](guides/15-security-analysis.md) | Auditing for vulnerabilities — OWASP Top 10, auth flows, injection risks, dependency CVEs |
+| 16 | [Working with Legacy Code](guides/16-working-with-legacy-code.md) | Safely modifying untested code — characterization tests, strangler fig, incremental improvement |
+| 17 | [Collaboration & Team Workflows](guides/17-collaboration-and-team-workflows.md) | Team practices — shared CLAUDE.md, onboarding, pair programming, knowledge capture |
+
+---
+
+## Where to Start
+
+**Brand new to Claude Code?**
+Start with [01 — Getting Started](guides/01-getting-started.md) and follow the guides in order.
+
+**Already using Claude Code, new to a codebase?**
+Skim [02 — Setup & Configuration](guides/02-setup-and-configuration.md), then start at [03 — Codebase Orientation](guides/03-codebase-orientation.md).
+
+**Working on a specific task right now?**
+Jump to [06 — Task Execution](guides/06-task-execution.md), but consider skimming [03](guides/03-codebase-orientation.md) first if the codebase is unfamiliar.
+
+**Want to improve your workflow?**
+Read [08 — Ongoing Practices](guides/08-ongoing-practices.md) and [09 — Anti-Patterns](guides/09-anti-patterns.md).
+
+**Struggling to get a project running locally?**
+Jump to [11 — Local Environment Setup](guides/11-local-environment-setup.md) for help with Docker, databases, and service dependencies.
+
+**Debugging a tricky issue?**
+Jump to [12 — Debugging & Troubleshooting](guides/12-debugging-and-troubleshooting.md) for a systematic approach to finding root causes.
+
+**Reviewing a PR or writing tests?**
+Jump to [13 — Code Review](guides/13-code-review.md) or [14 — Testing Strategies](guides/14-testing-strategies.md) for systematic approaches to review and test coverage.
+
+**Concerned about security?**
+Jump to [15 — Security Analysis](guides/15-security-analysis.md) for vulnerability auditing with the OWASP Top 10 checklist.
+
+**Working with old, untested code?**
+Jump to [16 — Working with Legacy Code](guides/16-working-with-legacy-code.md) for safe modification patterns.
+
+**Setting up team workflows?**
+Jump to [17 — Collaboration & Team Workflows](guides/17-collaboration-and-team-workflows.md) for shared CLAUDE.md practices and onboarding.
+
+**Planning a large migration?**
+Jump to [10 — Migration Planning](guides/10-migration-planning.md) — but read [03](guides/03-codebase-orientation.md) and [06](guides/06-task-execution.md) first if the codebase is unfamiliar.
+
+---
+
+## Further Reading
+
+- [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
+- [CLAUDE.md Best Practices](https://docs.anthropic.com/en/docs/claude-code/memory)
