@@ -34,13 +34,13 @@ flowchart TD
     A["Need to Change Code"] --> B{"Has Tests?"}
     B -->|Yes| C["Change Safely"]
     B -->|No| D["Need Tests First"]
-    D --> E{"Code Is\nTestable?"}
-    E -->|Yes| F["Write Characterization\nTests"]
-    E -->|No| G["Need to Refactor\nfor Testability"]
-    G --> H{"Safe to\nRefactor?"}
+    D --> E{"Code Is<br/>Testable?"}
+    E -->|Yes| F["Write Characterization<br/>Tests"]
+    E -->|No| G["Need to Refactor<br/>for Testability"]
+    G --> H{"Safe to<br/>Refactor?"}
     H -->|"Not without tests"| D
     F --> C
-    H -->|"Use Safe\nTechniques"| I["Introduce Seams\n(Minimal Changes)"]
+    H -->|"Use Safe<br/>Techniques"| I["Introduce Seams<br/>(Minimal Changes)"]
     I --> F
 
     style A fill:#e3f2fd,stroke:#1565c0
@@ -269,21 +269,21 @@ without a major refactor. Show me the minimal changes:
 ```mermaid
 flowchart TD
     A[Untestable Dependency] --> B{Type?}
-    B -->|Database| C[Extract repository\ninterface]
-    B -->|External API| D[Extract client\ninterface]
-    B -->|File System| E[Extract file\noperations]
-    B -->|Global State| F[Pass state as\nparameter]
-    B -->|Hardcoded Config| G[Extract config\nobject]
-    B -->|Time/Clock| H[Inject clock\nabstraction]
+    B -->|Database| C[Extract repository<br/>interface]
+    B -->|External API| D[Extract client<br/>interface]
+    B -->|File System| E[Extract file<br/>operations]
+    B -->|Global State| F[Pass state as<br/>parameter]
+    B -->|Hardcoded Config| G[Extract config<br/>object]
+    B -->|Time/Clock| H[Inject clock<br/>abstraction]
 
-    C --> I[Inject via\nConstructor]
+    C --> I[Inject via<br/>Constructor]
     D --> I
     E --> I
-    F --> J[Inject via\nParameters]
+    F --> J[Inject via<br/>Parameters]
     G --> J
     H --> J
 
-    I --> K[Test with\nFake/Mock]
+    I --> K[Test with<br/>Fake/Mock]
     J --> K
 
     style A fill:#ffcdd2,stroke:#c62828

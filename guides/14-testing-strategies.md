@@ -24,9 +24,9 @@ Writing effective tests with Claude — unit, integration, e2e, edge cases, mock
 ```mermaid
 graph TD
     subgraph Pyramid
-        E2E["E2E Tests\n(Few, Slow, Expensive)"]
-        INT["Integration Tests\n(Some, Medium Speed)"]
-        UNIT["Unit Tests\n(Many, Fast, Cheap)"]
+        E2E["E2E Tests<br/>(Few, Slow, Expensive)"]
+        INT["Integration Tests<br/>(Some, Medium Speed)"]
+        UNIT["Unit Tests<br/>(Many, Fast, Cheap)"]
     end
 
     E2E --- INT
@@ -140,13 +140,13 @@ Think about:
 ```mermaid
 flowchart TD
     A[Function to Test] --> B{Pure Function?}
-    B -->|Yes| C[Test inputs → outputs\nMany cases, fast]
+    B -->|Yes| C[Test inputs → outputs<br/>Many cases, fast]
     B -->|No| D{Side Effects?}
-    D -->|Yes| E[Mock the side effects\nVerify they're called]
-    D -->|No| F{Depends on\nExternal State?}
-    F -->|Yes| G[Set up state\nTest behavior\nClean up]
+    D -->|Yes| E[Mock the side effects<br/>Verify they're called]
+    D -->|No| F{Depends on<br/>External State?}
+    F -->|Yes| G[Set up state<br/>Test behavior<br/>Clean up]
     F -->|No| H{Async?}
-    H -->|Yes| I[Test success,\nfailure, and timeout]
+    H -->|Yes| I[Test success,<br/>failure, and timeout]
     H -->|No| C
 
     C --> J[Add Edge Cases]

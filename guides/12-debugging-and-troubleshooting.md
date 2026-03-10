@@ -30,13 +30,13 @@ Effective debugging with Claude follows a consistent pattern: **reproduce first,
 flowchart TD
     A[Observe the Problem] --> B[Reproduce It]
     B --> C{Reproducible?}
-    C -->|No| D[Gather More Context\nLogs, Conditions, Timing]
+    C -->|No| D[Gather More Context<br/>Logs, Conditions, Timing]
     D --> B
     C -->|Yes| E[Isolate the Cause]
     E --> F[Understand Why]
     F --> G[Fix the Root Cause]
     G --> H[Verify the Fix]
-    H --> I{Problem\nResolved?}
+    H --> I{Problem<br/>Resolved?}
     I -->|No| E
     I -->|Yes| J[Check for Related Issues]
 
@@ -262,16 +262,16 @@ from there.
 
 ```mermaid
 flowchart LR
-    A[Request In] --> B[Middleware\nAuth, Validation,\nLogging]
+    A[Request In] --> B[Middleware<br/>Auth, Validation,<br/>Logging]
     B --> C[Route Handler]
     C --> D[Service Layer]
-    D --> E[Database / Cache\n/ External API]
+    D --> E[Database / Cache<br/>/ External API]
     E --> F[Response Out]
 
-    B -.->|"Check: is the\nrequest reaching\nthe handler?"| G{Where does\nit fail?}
-    C -.->|"Check: is the\nhandler calling\nthe right service?"| G
-    D -.->|"Check: is the\nservice logic\ncorrect?"| G
-    E -.->|"Check: is the\nexternal call\nsucceeding?"| G
+    B -.->|"Check: is the<br/>request reaching<br/>the handler?"| G{Where does<br/>it fail?}
+    C -.->|"Check: is the<br/>handler calling<br/>the right service?"| G
+    D -.->|"Check: is the<br/>service logic<br/>correct?"| G
+    E -.->|"Check: is the<br/>external call<br/>succeeding?"| G
 
     style G fill:#fff3e0,stroke:#e65100
 ```
@@ -498,25 +498,25 @@ When you hit an error, use this flowchart to determine your approach:
 
 ```mermaid
 flowchart TD
-    A[Error Observed] --> B{Can you\nreproduce it?}
-    B -->|Yes| C{Is it a\ncrash/exception?}
-    B -->|No| D[Gather conditions:\nwhen, how often,\nwhat's different?]
+    A[Error Observed] --> B{Can you<br/>reproduce it?}
+    B -->|Yes| C{Is it a<br/>crash/exception?}
+    B -->|No| D[Gather conditions:<br/>when, how often,<br/>what's different?]
     D --> B
 
-    C -->|Yes| E[Read the stack trace\nFind your code in it]
-    C -->|No| F{Wrong behavior\nor slow?}
+    C -->|Yes| E[Read the stack trace<br/>Find your code in it]
+    C -->|No| F{Wrong behavior<br/>or slow?}
 
-    F -->|Wrong behavior| G[Add logging at\nkey decision points]
-    F -->|Slow| H[Profile: is it\nDB, network, or CPU?]
+    F -->|Wrong behavior| G[Add logging at<br/>key decision points]
+    F -->|Slow| H[Profile: is it<br/>DB, network, or CPU?]
 
-    E --> I{Is the cause in\nyour code?}
-    I -->|Yes| J[Read the function\nCheck inputs & state]
-    I -->|No| K{Library/framework\nor external service?}
+    E --> I{Is the cause in<br/>your code?}
+    I -->|Yes| J[Read the function<br/>Check inputs & state]
+    I -->|No| K{Library/framework<br/>or external service?}
 
-    K -->|Library| L[Check version,\nconfig, known issues]
-    K -->|External| M[Check connectivity,\nauth, rate limits]
+    K -->|Library| L[Check version,<br/>config, known issues]
+    K -->|External| M[Check connectivity,<br/>auth, rate limits]
 
-    G --> N[Follow the wrong\nvalue upstream]
+    G --> N[Follow the wrong<br/>value upstream]
     H --> O[Fix the bottleneck]
 
     J --> P[Fix & Verify]

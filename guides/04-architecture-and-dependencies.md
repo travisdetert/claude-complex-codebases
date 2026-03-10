@@ -210,13 +210,13 @@ Generate a component architecture diagram in Mermaid showing:
 ```mermaid
 flowchart TB
     subgraph Client Layer
-        WEB[Web App\nReact]
-        MOB[Mobile App\nReact Native]
+        WEB[Web App<br/>React]
+        MOB[Mobile App<br/>React Native]
     end
 
     subgraph API Layer
-        GW[API Gateway\nNginx]
-        API[Application Server\nExpress]
+        GW[API Gateway<br/>Nginx]
+        API[Application Server<br/>Express]
     end
 
     subgraph Service Layer

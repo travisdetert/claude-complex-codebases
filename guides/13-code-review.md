@@ -116,13 +116,13 @@ This PR modifies [function/class/type]. Show me:
 
 ```mermaid
 flowchart TD
-    A[Identify Changed\nFunctions/Types] --> B[Find All Callers]
-    B --> C{All Callers\nUpdated?}
-    C -->|Yes| D[Check Tests\nCover Callers]
-    C -->|No| E[Flag Missing\nUpdates]
-    D --> F{Tests\nSufficient?}
+    A[Identify Changed<br/>Functions/Types] --> B[Find All Callers]
+    B --> C{All Callers<br/>Updated?}
+    C -->|Yes| D[Check Tests<br/>Cover Callers]
+    C -->|No| E[Flag Missing<br/>Updates]
+    D --> F{Tests<br/>Sufficient?}
     F -->|Yes| G[Change Is Safe]
-    F -->|No| H[Request More\nTests]
+    F -->|No| H[Request More<br/>Tests]
     E --> I[Request Changes]
 
     style A fill:#e3f2fd,stroke:#1565c0
@@ -243,20 +243,20 @@ If so, is there a migration path for existing consumers?
 ```mermaid
 flowchart TD
     A[Read PR Description] --> B[Read the Diff]
-    B --> C{Intent\nClear?}
-    C -->|No| D[Ask Author to\nClarify Purpose]
+    B --> C{Intent<br/>Clear?}
+    C -->|No| D[Ask Author to<br/>Clarify Purpose]
     C -->|Yes| E[Trace Impact]
-    E --> F{Breaking\nChanges?}
-    F -->|Yes| G{Migration\nPath?}
-    G -->|No| H[Request Changes:\nNeed Migration Plan]
+    E --> F{Breaking<br/>Changes?}
+    F -->|Yes| G{Migration<br/>Path?}
+    G -->|No| H[Request Changes:<br/>Need Migration Plan]
     G -->|Yes| I[Check Tests]
     F -->|No| I
-    I --> J{Tests\nSufficient?}
-    J -->|No| K[Request Changes:\nNeed More Tests]
+    I --> J{Tests<br/>Sufficient?}
+    J -->|No| K[Request Changes:<br/>Need More Tests]
     J -->|Yes| L[Check for Issues]
-    L --> M{Issues\nFound?}
+    L --> M{Issues<br/>Found?}
     M -->|Critical| N[Request Changes]
-    M -->|Minor| O[Approve with\nSuggestions]
+    M -->|Minor| O[Approve with<br/>Suggestions]
     M -->|None| P[Approve]
 
     style A fill:#e3f2fd,stroke:#1565c0
@@ -278,10 +278,10 @@ Not all issues are equal. Categorize your feedback:
 ```mermaid
 flowchart LR
     A[Issue Found] --> B{Severity?}
-    B -->|"Security/data loss\ncorrectness bug"| C["🔴 Blocker\nMust fix before merge"]
-    B -->|"Missing tests,\nerror handling gap"| D["🟡 Request Change\nShould fix before merge"]
-    B -->|"Style, naming,\nminor improvement"| E["🟢 Suggestion\nNice to have"]
-    B -->|"Nitpick, formatting,\npersonal preference"| F["⚪ Nit\nTake it or leave it"]
+    B -->|"Security/data loss<br/>correctness bug"| C["🔴 Blocker<br/>Must fix before merge"]
+    B -->|"Missing tests,<br/>error handling gap"| D["🟡 Request Change<br/>Should fix before merge"]
+    B -->|"Style, naming,<br/>minor improvement"| E["🟢 Suggestion<br/>Nice to have"]
+    B -->|"Nitpick, formatting,<br/>personal preference"| F["⚪ Nit<br/>Take it or leave it"]
 
     style C fill:#ffcdd2,stroke:#c62828
     style D fill:#fff3e0,stroke:#e65100

@@ -34,13 +34,13 @@ flowchart TD
     B --> C[Choose Migration Strategy]
     C --> D[Create Phased Plan]
     D --> E[Execute Phase 1]
-    E --> F{Verify &\nStabilize}
+    E --> F{Verify &<br/>Stabilize}
     F -->|Issues| G[Fix or Roll Back]
     G --> F
-    F -->|Stable| H{More\nPhases?}
+    F -->|Stable| H{More<br/>Phases?}
     H -->|Yes| I[Execute Next Phase]
     I --> F
-    H -->|No| J[Remove Old Code\n& Clean Up]
+    H -->|No| J[Remove Old Code<br/>& Clean Up]
     J --> K[Final Verification]
 
     style A fill:#e3f2fd,stroke:#1565c0
@@ -94,7 +94,7 @@ flowchart TD
         C[AdminPanel] --> TARGET
     end
 
-    TARGET["ORM Layer\n— MIGRATING THIS —"]
+    TARGET["ORM Layer<br/>— MIGRATING THIS —"]
 
     subgraph "Indirect Dependencies"
         D[UserController Tests] --> A
@@ -147,19 +147,19 @@ Explain the tradeoffs for our specific situation.
 ```mermaid
 flowchart LR
     subgraph "Strangler Fig"
-        SF1[Old System] --> SF2[Route some\ntraffic to new]
-        SF2 --> SF3[Route more\ntraffic to new]
+        SF1[Old System] --> SF2[Route some<br/>traffic to new]
+        SF2 --> SF3[Route more<br/>traffic to new]
         SF3 --> SF4[Retire old]
     end
 
     subgraph "Branch by Abstraction"
-        BA1[Direct usage] --> BA2[Add abstraction\nlayer]
-        BA2 --> BA3[Swap\nimplementation]
-        BA3 --> BA4[Remove\nabstraction]
+        BA1[Direct usage] --> BA2[Add abstraction<br/>layer]
+        BA2 --> BA3[Swap<br/>implementation]
+        BA3 --> BA4[Remove<br/>abstraction]
     end
 
     subgraph "Big Bang"
-        BB1[Old System] --> BB2[Switch\neverything]
+        BB1[Old System] --> BB2[Switch<br/>everything]
     end
 
     style SF4 fill:#e8f5e9,stroke:#2e7d32
@@ -313,11 +313,11 @@ a zero-downtime migration:
 
 ```mermaid
 flowchart LR
-    A["1. Add new\ncolumns/tables"] --> B["2. Dual-write\n(old + new)"]
-    B --> C["3. Backfill\nhistorical data"]
-    C --> D["4. Read from\nnew, write both"]
-    D --> E["5. Read + write\nnew only"]
-    E --> F["6. Drop old\ncolumns/tables"]
+    A["1. Add new<br/>columns/tables"] --> B["2. Dual-write<br/>(old + new)"]
+    B --> C["3. Backfill<br/>historical data"]
+    C --> D["4. Read from<br/>new, write both"]
+    D --> E["5. Read + write<br/>new only"]
+    E --> F["6. Drop old<br/>columns/tables"]
 
     style A fill:#e8f5e9,stroke:#2e7d32
     style B fill:#fff3e0,stroke:#e65100
@@ -412,13 +412,13 @@ For each phase of this migration, define:
 
 ```mermaid
 flowchart TD
-    A[Problem Detected\nDuring Migration] --> B{Data\nmodified?}
-    B -->|No| C[Revert code change\nRedeploy previous version]
-    B -->|Yes| D{Data change\nreversible?}
-    D -->|Yes| E[Run reverse migration\nRevert code]
-    D -->|No| F{Can the new code\nhandle old + new data?}
-    F -->|Yes| G[Fix forward\nDon't roll back]
-    F -->|No| H[Manual intervention\nPage the team]
+    A[Problem Detected<br/>During Migration] --> B{Data<br/>modified?}
+    B -->|No| C[Revert code change<br/>Redeploy previous version]
+    B -->|Yes| D{Data change<br/>reversible?}
+    D -->|Yes| E[Run reverse migration<br/>Revert code]
+    D -->|No| F{Can the new code<br/>handle old + new data?}
+    F -->|Yes| G[Fix forward<br/>Don't roll back]
+    F -->|No| H[Manual intervention<br/>Page the team]
 
     style C fill:#e8f5e9,stroke:#2e7d32
     style E fill:#fff3e0,stroke:#e65100

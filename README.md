@@ -10,22 +10,22 @@ Whether you've never used Claude Code or you're looking for advanced workflows, 
 
 ```mermaid
 flowchart LR
-    A["01\nGetting Started"] --> B["02\nSetup &\nConfiguration"]
-    B --> C["03\nCodebase\nOrientation"]
-    C --> D["04\nArchitecture &\nDependencies"]
-    D --> E["05\nCodebase\nArchaeology"]
-    E --> F["06\nTask\nExecution"]
-    F --> G["07\nDiagrams &\nDocs"]
-    G --> H["08\nOngoing\nPractices"]
-    H --> I["09\nAnti-\nPatterns"]
-    I --> J["10\nMigration\nPlanning"]
-    J --> K["11\nLocal Env\nSetup"]
-    K --> L["12\nDebugging &\nTroubleshooting"]
-    L --> M["13\nCode\nReview"]
-    M --> N["14\nTesting\nStrategies"]
-    N --> O["15\nSecurity\nAnalysis"]
-    O --> P["16\nLegacy\nCode"]
-    P --> Q["17\nCollaboration\n& Teams"]
+    A["01<br/>Getting Started"] --> B["02<br/>Setup &<br/>Configuration"]
+    B --> C["03<br/>Codebase<br/>Orientation"]
+    C --> D["04<br/>Architecture &<br/>Dependencies"]
+    D --> E["05<br/>Codebase<br/>Archaeology"]
+    E --> F["06<br/>Task<br/>Execution"]
+    F --> G["07<br/>Diagrams &<br/>Docs"]
+    G --> H["08<br/>Ongoing<br/>Practices"]
+    H --> I["09<br/>Anti-<br/>Patterns"]
+    I --> J["10<br/>Migration<br/>Planning"]
+    J --> K["11<br/>Local Env<br/>Setup"]
+    K --> L["12<br/>Debugging &<br/>Troubleshooting"]
+    L --> M["13<br/>Code<br/>Review"]
+    M --> N["14<br/>Testing<br/>Strategies"]
+    N --> O["15<br/>Security<br/>Analysis"]
+    O --> P["16<br/>Legacy<br/>Code"]
+    P --> Q["17<br/>Collaboration<br/>& Teams"]
 
     style A fill:#e8f5e9,stroke:#2e7d32
     style B fill:#e8f5e9,stroke:#2e7d32

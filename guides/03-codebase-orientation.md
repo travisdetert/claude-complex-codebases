@@ -26,7 +26,7 @@ flowchart TD
     B --> C[Map Entry Points]
     C --> D[Trace a Request]
     D --> E[Update CLAUDE.md]
-    E --> F["Ready for deeper exploration\n(Guide 04)"]
+    E --> F["Ready for deeper exploration<br/>(Guide 04)"]
 
     style A fill:#e8f5e9,stroke:#2e7d32
     style F fill:#e3f2fd,stroke:#1565c0

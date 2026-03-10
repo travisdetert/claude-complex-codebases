@@ -132,14 +132,14 @@ backorder, or cancel.
 
 ```mermaid
 flowchart TD
-    A[New Order] --> B{All items\nin stock?}
+    A[New Order] --> B{All items<br/>in stock?}
     B -->|Yes| C{Total > $500?}
-    B -->|No| D{Partial\nshipment OK?}
+    B -->|No| D{Partial<br/>shipment OK?}
     C -->|Yes| E[Manual fraud review]
     C -->|No| F[Auto-approve]
-    D -->|Yes| G[Ship available items\nBackorder remainder]
-    D -->|No| H{Restock\nwithin 7 days?}
-    H -->|Yes| I[Hold order\nNotify customer]
+    D -->|Yes| G[Ship available items<br/>Backorder remainder]
+    D -->|No| H{Restock<br/>within 7 days?}
+    H -->|Yes| I[Hold order<br/>Notify customer]
     H -->|No| J[Cancel + refund]
     E --> K{Approved?}
     K -->|Yes| F

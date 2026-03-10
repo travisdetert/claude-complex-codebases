@@ -36,7 +36,7 @@ flowchart TD
     end
 
     subgraph "Trust Boundary"
-        VAL[Validation\nSanitization\nAuthentication]
+        VAL[Validation<br/>Sanitization<br/>Authentication]
     end
 
     subgraph "Trusted (Internal)"
@@ -377,7 +377,7 @@ Help me do a basic threat model for [feature/system]:
 
 ```mermaid
 flowchart TD
-    A[Security Review\nStarting Point] --> B[Input Validation]
+    A[Security Review<br/>Starting Point] --> B[Input Validation]
     B --> C[Authentication]
     C --> D[Authorization]
     D --> E[Data Protection]
@@ -385,9 +385,9 @@ flowchart TD
     F --> G[Configuration]
     G --> H[Logging]
     H --> I[Error Handling]
-    I --> J{Issues\nFound?}
-    J -->|Yes| K[Prioritize by\nSeverity & Impact]
-    J -->|No| L[Document\nReview Complete]
+    I --> J{Issues<br/>Found?}
+    J -->|Yes| K[Prioritize by<br/>Severity & Impact]
+    J -->|No| L[Document<br/>Review Complete]
     K --> M[Fix Critical First]
     M --> N[Recheck After Fix]
 

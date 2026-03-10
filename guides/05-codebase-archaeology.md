@@ -23,12 +23,12 @@ Understanding the current code tells you *what* the system does. Understanding i
 
 ```mermaid
 flowchart TD
-    A[Git History\nAnalysis] --> B{Is this area\nhigh churn?}
-    B -->|Yes| C[Why?\nBugs? Refactors?\nRequirement changes?]
-    B -->|No| D[Stable —\nproceed with care]
-    C --> E[Read key commits\nand PR descriptions]
-    E --> F[Understand\nconstraints\nand decisions]
-    F --> G[Make informed\nchanges]
+    A[Git History<br/>Analysis] --> B{Is this area<br/>high churn?}
+    B -->|Yes| C[Why?<br/>Bugs? Refactors?<br/>Requirement changes?]
+    B -->|No| D[Stable —<br/>proceed with care]
+    C --> E[Read key commits<br/>and PR descriptions]
+    E --> F[Understand<br/>constraints<br/>and decisions]
+    F --> G[Make informed<br/>changes]
     D --> G
 
     style A fill:#e3f2fd,stroke:#1565c0
@@ -287,17 +287,17 @@ When you encounter unfamiliar code, use this process:
 
 ```mermaid
 flowchart TD
-    A[Encounter\nunfamiliar code] --> B{Does it look\nsimple and clean?}
-    B -->|Yes| C[Probably is — but\ncheck git blame briefly]
-    B -->|No| D{Is it\nhigh churn?}
-    D -->|Yes| E[Read recent commits\nand PRs for context]
-    D -->|No| F{Has it been\nuntouched for years?}
-    F -->|Yes| G[Be cautious —\nit works, don't break it]
-    F -->|No| H[Read the commit\nthat last changed it]
-    E --> I[Understand the\nconstraints before\nchanging]
+    A[Encounter<br/>unfamiliar code] --> B{Does it look<br/>simple and clean?}
+    B -->|Yes| C[Probably is — but<br/>check git blame briefly]
+    B -->|No| D{Is it<br/>high churn?}
+    D -->|Yes| E[Read recent commits<br/>and PRs for context]
+    D -->|No| F{Has it been<br/>untouched for years?}
+    F -->|Yes| G[Be cautious —<br/>it works, don't break it]
+    F -->|No| H[Read the commit<br/>that last changed it]
+    E --> I[Understand the<br/>constraints before<br/>changing]
     G --> I
     H --> I
-    C --> J[Safe to modify\nwith normal care]
+    C --> J[Safe to modify<br/>with normal care]
     I --> J
 
     style A fill:#fff3e0,stroke:#e65100

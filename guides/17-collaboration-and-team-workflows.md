@@ -25,9 +25,9 @@ CLAUDE.md files exist at multiple levels. Teams should use each level intentiona
 
 ```mermaid
 flowchart TD
-    A["~/.claude/CLAUDE.md\n(Personal Preferences)"] --> D[What Claude Sees\nIn Each Session]
-    B["project/CLAUDE.md\n(Shared Team Context)\n✅ Committed to Git"] --> D
-    C["project/.claude/CLAUDE.md\n(Personal Project Overrides)\n🚫 Gitignored"] --> D
+    A["~/.claude/CLAUDE.md<br/>(Personal Preferences)"] --> D[What Claude Sees<br/>In Each Session]
+    B["project/CLAUDE.md<br/>(Shared Team Context)<br/>✅ Committed to Git"] --> D
+    C["project/.claude/CLAUDE.md<br/>(Personal Project Overrides)<br/>🚫 Gitignored"] --> D
 
     style B fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px
     style A fill:#e3f2fd,stroke:#1565c0
@@ -203,10 +203,10 @@ it in under 30 minutes.
 
 ```mermaid
 flowchart LR
-    A["Day 1\nSetup & Run"] --> B["Day 2-3\nExplore with Claude"]
-    B --> C["Week 1\nFirst Small PR"]
-    C --> D["Week 2\nDeeper Feature Work"]
-    D --> E["Month 1\nContributing to\nCLAUDE.md"]
+    A["Day 1<br/>Setup & Run"] --> B["Day 2-3<br/>Explore with Claude"]
+    B --> C["Week 1<br/>First Small PR"]
+    C --> D["Week 2<br/>Deeper Feature Work"]
+    D --> E["Month 1<br/>Contributing to<br/>CLAUDE.md"]
 
     style A fill:#e8f5e9,stroke:#2e7d32
     style B fill:#e3f2fd,stroke:#1565c0
@@ -275,16 +275,16 @@ Check for:
 
 ```mermaid
 flowchart TD
-    A[Developer Learns\nSomething] --> B{Worth Sharing?}
+    A[Developer Learns<br/>Something] --> B{Worth Sharing?}
     B -->|"One-off fix"| C[Move On]
     B -->|"Pattern/Convention"| D[Add to CLAUDE.md]
-    B -->|"Gotcha/Pitfall"| E[Add to CLAUDE.md\nGotchas Section]
-    B -->|"Architecture\nDecision"| F[Add ADR or\nCLAUDE.md Section]
+    B -->|"Gotcha/Pitfall"| E[Add to CLAUDE.md<br/>Gotchas Section]
+    B -->|"Architecture<br/>Decision"| F[Add ADR or<br/>CLAUDE.md Section]
 
     D --> G[PR Review]
     E --> G
     F --> G
-    G --> H[Team Learns\nCollectively]
+    G --> H[Team Learns<br/>Collectively]
 
     style A fill:#e3f2fd,stroke:#1565c0
     style H fill:#e8f5e9,stroke:#2e7d32

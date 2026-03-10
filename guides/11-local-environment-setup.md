@@ -28,7 +28,7 @@ flowchart TD
     A[Clone the Repo] --> B[Assess Requirements]
     B --> C[Install Prerequisites]
     C --> D[Configure Environment]
-    D --> E[Start Infrastructure\nDatabases, Queues, etc.]
+    D --> E[Start Infrastructure<br/>Databases, Queues, etc.]
     E --> F[Run Migrations & Seeds]
     F --> G[Start Application Services]
     G --> H[Verify Everything Works]
@@ -191,12 +191,12 @@ Analyze the docker-compose.yml file:
 ```mermaid
 flowchart TD
     subgraph "Typical Docker Compose Stack"
-        DB[(PostgreSQL\n:5432)]
-        REDIS[(Redis\n:6379)]
-        MQ[RabbitMQ\n:5672]
-        API[API Server\n:3000]
-        WORKER[Background\nWorker]
-        WEB[Frontend\n:8080]
+        DB[(PostgreSQL<br/>:5432)]
+        REDIS[(Redis<br/>:6379)]
+        MQ[RabbitMQ<br/>:5672]
+        API[API Server<br/>:3000]
+        WORKER[Background<br/>Worker]
+        WEB[Frontend<br/>:8080]
 
         API --> DB
         API --> REDIS
@@ -321,8 +321,8 @@ diagram.
 
 ```mermaid
 flowchart TD
-    A[1. Infrastructure\nDatabases, Redis, Message Queues] --> B[2. Backend Services\nAPIs, Workers]
-    B --> C[3. Frontend\nWeb Apps, Dev Servers]
+    A[1. Infrastructure<br/>Databases, Redis, Message Queues] --> B[2. Backend Services<br/>APIs, Workers]
+    B --> C[3. Frontend<br/>Web Apps, Dev Servers]
 
     A1[PostgreSQL] --> B1[API Server]
     A2[Redis] --> B1

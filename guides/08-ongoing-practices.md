@@ -23,13 +23,13 @@ Good Claude Code usage isn't a linear process — it's a cycle:
 
 ```mermaid
 flowchart TD
-    A[Work on Task] --> B[Learn Something\nAbout the Codebase]
-    B --> C[Update CLAUDE.md\nor Memory]
-    C --> D[Next Task Benefits\nfrom Context]
+    A[Work on Task] --> B[Learn Something<br/>About the Codebase]
+    B --> C[Update CLAUDE.md<br/>or Memory]
+    C --> D[Next Task Benefits<br/>from Context]
     D --> A
 
     E[Hit a Problem] --> F[Find the Root Cause]
-    F --> G[Document the\nGotcha]
+    F --> G[Document the<br/>Gotcha]
     G --> D
 
     style C fill:#e8f5e9,stroke:#2e7d32

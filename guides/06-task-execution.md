@@ -22,16 +22,16 @@ Plan, implement, and verify changes methodically — from understanding the task
 
 ```mermaid
 flowchart TD
-    A[Receive Task] --> B[Plan Mode:\nExplore & Analyze]
+    A[Receive Task] --> B[Plan Mode:<br/>Explore & Analyze]
     B --> C[Read Existing Tests]
     C --> D[Assess Coverage Gaps]
     D --> E[Check Blast Radius]
-    E --> F{Approach\nClear?}
+    E --> F{Approach<br/>Clear?}
     F -->|No| B
     F -->|Yes| G[Make the Change]
     G --> H[Run Tests]
     H --> I{Tests Pass?}
-    I -->|No| J[Diagnose &\nFix]
+    I -->|No| J[Diagnose &<br/>Fix]
     J --> H
     I -->|Yes| K[Review Diff]
     K --> L[Create PR]
@@ -153,7 +153,7 @@ flowchart TD
         C[CheckoutFlow] --> TARGET
     end
 
-    TARGET[OrderService.createOrder\n— YOU ARE CHANGING THIS —]
+    TARGET[OrderService.createOrder<br/>— YOU ARE CHANGING THIS —]
 
     subgraph "Dependencies"
         TARGET --> D[InventoryRepo]
