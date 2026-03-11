@@ -448,4 +448,4 @@ When multiple repos share patterns, establish organization-wide conventions:
 
 ---
 
-**That completes the guide series.** Go back to the [main page](../README.md) to explore all guides or revisit earlier topics.
+**Next**: [18 — API Design & Evolution](18-api-design-and-evolution.md) — Designing APIs with REST/GraphQL conventions, versioning, and backward compatibility.

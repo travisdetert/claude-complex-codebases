@@ -26,6 +26,13 @@ flowchart LR
     N --> O["15<br/>Security<br/>Analysis"]
     O --> P["16<br/>Legacy<br/>Code"]
     P --> Q["17<br/>Collaboration<br/>& Teams"]
+    Q --> R["18<br/>API Design<br/>& Evolution"]
+    R --> S["19<br/>Data Modeling<br/>& DB Design"]
+    S --> T["20<br/>CI/CD &<br/>Automation"]
+    T --> U["21<br/>Performance<br/>Optimization"]
+    U --> V["22<br/>Incident<br/>Response"]
+    V --> W["23<br/>Tech Debt<br/>Management"]
+    W --> X["24<br/>Accessibility<br/>Auditing"]
 
     style A fill:#e8f5e9,stroke:#2e7d32
     style B fill:#e8f5e9,stroke:#2e7d32
@@ -44,6 +51,13 @@ flowchart LR
     style O fill:#fff3e0,stroke:#e65100
     style P fill:#fff3e0,stroke:#e65100
     style Q fill:#f3e5f5,stroke:#6a1b9a
+    style R fill:#fff3e0,stroke:#e65100
+    style S fill:#fff3e0,stroke:#e65100
+    style T fill:#fff3e0,stroke:#e65100
+    style U fill:#fff3e0,stroke:#e65100
+    style V fill:#fff3e0,stroke:#e65100
+    style W fill:#f3e5f5,stroke:#6a1b9a
+    style X fill:#fff3e0,stroke:#e65100
 ```
 
 **Green** = Setup | **Blue** = Understanding | **Orange** = Doing | **Purple** = Sustaining
@@ -71,6 +85,13 @@ flowchart LR
 | 15 | [Security Analysis](guides/15-security-analysis.md) | Auditing for vulnerabilities — OWASP Top 10, auth flows, injection risks, dependency CVEs |
 | 16 | [Working with Legacy Code](guides/16-working-with-legacy-code.md) | Safely modifying untested code — characterization tests, strangler fig, incremental improvement |
 | 17 | [Collaboration & Team Workflows](guides/17-collaboration-and-team-workflows.md) | Team practices — shared CLAUDE.md, onboarding, pair programming, knowledge capture |
+| 18 | [API Design & Evolution](guides/18-api-design-and-evolution.md) | Designing APIs — REST/GraphQL conventions, versioning, backward compatibility, deprecation strategies |
+| 19 | [Data Modeling & Database Design](guides/19-data-modeling-and-database-design.md) | Schema design — normalization, indexing strategies, query optimization, ER modeling |
+| 20 | [CI/CD & Automation](guides/20-ci-cd-and-automation.md) | Pipelines — GitHub Actions, debugging builds, deployment strategies, integrating Claude into automation |
+| 21 | [Performance Optimization](guides/21-performance-optimization.md) | Proactive optimization — profiling, caching strategies, load testing, database tuning |
+| 22 | [Incident Response](guides/22-incident-response.md) | Production incidents — triage, rollback decisions, postmortems, on-call with Claude |
+| 23 | [Technical Debt Management](guides/23-technical-debt-management.md) | Systematic debt management — identifying, measuring, prioritizing, and paying down tech debt |
+| 24 | [Accessibility Auditing](guides/24-accessibility-auditing.md) | WCAG compliance — semantic HTML, keyboard navigation, screen readers, color contrast |
 
 ---
 
@@ -108,6 +129,27 @@ Jump to [17 — Collaboration & Team Workflows](guides/17-collaboration-and-team
 
 **Planning a large migration?**
 Jump to [10 — Migration Planning](guides/10-migration-planning.md) — but read [03](guides/03-codebase-orientation.md) and [06](guides/06-task-execution.md) first if the codebase is unfamiliar.
+
+**Designing an API?**
+Jump to [18 — API Design & Evolution](guides/18-api-design-and-evolution.md) for REST/GraphQL conventions, versioning, and backward compatibility.
+
+**Designing a database schema?**
+Jump to [19 — Data Modeling & Database Design](guides/19-data-modeling-and-database-design.md) for normalization, indexing, and query optimization.
+
+**Setting up or fixing CI/CD pipelines?**
+Jump to [20 — CI/CD & Automation](guides/20-ci-cd-and-automation.md) for GitHub Actions, debugging builds, and deployment strategies.
+
+**Optimizing for performance?**
+Jump to [21 — Performance Optimization](guides/21-performance-optimization.md) for profiling, caching, and load testing.
+
+**Dealing with a production incident?**
+Jump to [22 — Incident Response](guides/22-incident-response.md) for triage, rollback decisions, and blameless postmortems.
+
+**Tackling technical debt?**
+Jump to [23 — Technical Debt Management](guides/23-technical-debt-management.md) for systematic identification, prioritization, and repayment.
+
+**Making your app accessible?**
+Jump to [24 — Accessibility Auditing](guides/24-accessibility-auditing.md) for WCAG compliance, keyboard navigation, and screen reader testing.
 
 ---
 
