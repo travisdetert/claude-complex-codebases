@@ -2,154 +2,459 @@
 
 A practical, modular guide for using [Claude Code](https://docs.anthropic.com/en/docs/claude-code) to understand, navigate, and work effectively in large or unfamiliar codebases.
 
-Whether you've never used Claude Code or you're looking for advanced workflows, this guide series walks you through everything — from installation to ongoing maintenance practices.
+46 guides organized into tracks you can follow based on your role and what you're trying to do. Start with the Foundation, then follow the track that matches your needs.
 
 ---
 
 ## Roadmap
 
 ```mermaid
-flowchart LR
-    A["01<br/>Getting Started"] --> B["02<br/>Setup &<br/>Configuration"]
-    B --> C["03<br/>Codebase<br/>Orientation"]
-    C --> D["04<br/>Architecture &<br/>Dependencies"]
-    D --> E["05<br/>Codebase<br/>Archaeology"]
-    E --> F["06<br/>Task<br/>Execution"]
-    F --> G["07<br/>Diagrams &<br/>Docs"]
-    G --> H["08<br/>Ongoing<br/>Practices"]
-    H --> I["09<br/>Anti-<br/>Patterns"]
-    I --> J["10<br/>Migration<br/>Planning"]
-    J --> K["11<br/>Local Env<br/>Setup"]
-    K --> L["12<br/>Debugging &<br/>Troubleshooting"]
-    L --> M["13<br/>Code<br/>Review"]
-    M --> N["14<br/>Testing<br/>Strategies"]
-    N --> O["15<br/>Security<br/>Analysis"]
-    O --> P["16<br/>Legacy<br/>Code"]
-    P --> Q["17<br/>Collaboration<br/>& Teams"]
-    Q --> R["18<br/>API Design<br/>& Evolution"]
-    R --> S["19<br/>Data Modeling<br/>& DB Design"]
-    S --> T["20<br/>CI/CD &<br/>Automation"]
-    T --> U["21<br/>Performance<br/>Optimization"]
-    U --> V["22<br/>Incident<br/>Response"]
-    V --> W["23<br/>Tech Debt<br/>Management"]
-    W --> X["24<br/>Accessibility<br/>Auditing"]
+flowchart TD
+    subgraph foundation ["Foundation (Start Here)"]
+        A["01 Getting Started"]
+        B["02 Setup & Config"]
+        C["27 Rules & Instructions"]
+    end
 
-    style A fill:#e8f5e9,stroke:#2e7d32
-    style B fill:#e8f5e9,stroke:#2e7d32
-    style C fill:#e3f2fd,stroke:#1565c0
-    style D fill:#e3f2fd,stroke:#1565c0
-    style E fill:#e3f2fd,stroke:#1565c0
-    style F fill:#fff3e0,stroke:#e65100
-    style G fill:#fff3e0,stroke:#e65100
-    style H fill:#f3e5f5,stroke:#6a1b9a
-    style I fill:#f3e5f5,stroke:#6a1b9a
-    style J fill:#fff3e0,stroke:#e65100
-    style K fill:#fff3e0,stroke:#e65100
-    style L fill:#fff3e0,stroke:#e65100
-    style M fill:#fff3e0,stroke:#e65100
-    style N fill:#fff3e0,stroke:#e65100
-    style O fill:#fff3e0,stroke:#e65100
-    style P fill:#fff3e0,stroke:#e65100
-    style Q fill:#f3e5f5,stroke:#6a1b9a
-    style R fill:#fff3e0,stroke:#e65100
-    style S fill:#fff3e0,stroke:#e65100
-    style T fill:#fff3e0,stroke:#e65100
-    style U fill:#fff3e0,stroke:#e65100
-    style V fill:#fff3e0,stroke:#e65100
-    style W fill:#f3e5f5,stroke:#6a1b9a
-    style X fill:#fff3e0,stroke:#e65100
+    subgraph understanding ["Understanding Code"]
+        D["03 Codebase Orientation"]
+        E["04 Architecture & Deps"]
+        F["05 Codebase Archaeology"]
+    end
+
+    subgraph daily ["Daily Development"]
+        G["11 Local Env Setup"]
+        H["06 Task Execution"]
+        I["12 Debugging"]
+        J["13 Code Review"]
+        K["14 Testing"]
+        L["07 Diagrams & Docs"]
+    end
+
+    subgraph quality ["Code Quality"]
+        M["15 Security Analysis"]
+        N["16 Legacy Code"]
+        O["23 Tech Debt"]
+        P["24 Accessibility"]
+    end
+
+    subgraph design ["Architecture & Design"]
+        Q["18 API Design"]
+        R["19 Data Modeling & DB"]
+        S["10 Migration Planning"]
+    end
+
+    subgraph ops ["Operations & Infrastructure"]
+        T["20 CI/CD & Automation"]
+        U["21 Performance"]
+        V["22 Incident Response"]
+        W["29 Cloud Estimation"]
+        X["30 Cloud Architecture"]
+    end
+
+    subgraph team ["Team & Process"]
+        Y["17 Collaboration"]
+        Z["08 Ongoing Practices"]
+        AA["09 Anti-Patterns"]
+    end
+
+    subgraph trust ["Validation & Trust"]
+        AE["31 Validating AI Code"]
+        AF["32 Trust & Governance"]
+        AK["36 Trusting Auto-<br/>generated Tests"]
+    end
+
+    subgraph systems ["Systems Analysis"]
+        AJ["37 Integration Analysis"]
+        AL["38 Dependency & Risk"]
+    end
+
+    subgraph mastery ["Claude Code Mastery"]
+        AB["25 MCP Servers"]
+        AC["26 Agents & Patterns"]
+        AD["28 Troubleshooting Prompts"]
+    end
+
+    subgraph advanced ["Advanced & Power User"]
+        AG["33 Multi-Agent<br/>Coordination"]
+        AH["34 Automation &<br/>Headless"]
+        AI["35 Power User<br/>Patterns"]
+    end
+
+    subgraph specialops ["Specialized Operations"]
+        AM["39 Observability"]
+        AN["43 Distributed<br/>Systems"]
+        AO["42 Monorepo"]
+    end
+
+    subgraph planning ["Planning & Communication"]
+        AP["40 ADRs & Tech<br/>Writing"]
+        AQ["41 Estimation<br/>& Scoping"]
+        AR["46 Cross-Functional<br/>Collaboration"]
+    end
+
+    subgraph domains ["Domain Tracks"]
+        AS["44 Frontend<br/>Architecture"]
+        AT["45 Data Engineering<br/>& Pipelines"]
+    end
+
+    A --> B --> C
+    C --> understanding
+    C --> daily
+    C --> mastery
+
+    understanding --> daily
+    daily --> quality
+    daily --> design
+    daily --> ops
+    daily --> team
+    daily --> trust
+    daily --> systems
+    daily --> domains
+    trust --> team
+    systems --> ops
+    systems --> specialops
+    mastery --> advanced
+    design --> planning
+    team --> planning
+
+    style foundation fill:#e8f5e9,stroke:#2e7d32
+    style understanding fill:#e3f2fd,stroke:#1565c0
+    style daily fill:#fff3e0,stroke:#e65100
+    style quality fill:#fce4ec,stroke:#c62828
+    style design fill:#f3e5f5,stroke:#6a1b9a
+    style ops fill:#e0f2f1,stroke:#00695c
+    style team fill:#fff8e1,stroke:#f57f17
+    style trust fill:#e8eaf6,stroke:#283593
+    style mastery fill:#ede7f6,stroke:#4527a0
+    style systems fill:#e0f7fa,stroke:#006064
+    style advanced fill:#fbe9e7,stroke:#bf360c
+    style specialops fill:#e0f2f1,stroke:#00695c
+    style planning fill:#f9fbe7,stroke:#827717
+    style domains fill:#fff3e0,stroke:#e65100
 ```
-
-**Green** = Setup | **Blue** = Understanding | **Orange** = Doing | **Purple** = Sustaining
 
 ---
 
-## Guides
+## Tracks
+
+### Foundation (Start Here)
+
+Everyone should read these first. They cover installation, configuration, and how to give Claude effective instructions.
 
 | # | Guide | Description |
 |---|-------|-------------|
 | 01 | [Getting Started](guides/01-getting-started.md) | Installation, first launch, key concepts, your first 5-minute exploration |
 | 02 | [Setup & Configuration](guides/02-setup-and-configuration.md) | CLAUDE.md, permissions, the `.claude/` directory, MCP servers, team workflows |
+| 27 | [Rules & Instructions](guides/27-rules-and-instructions.md) | CLAUDE.md hierarchy, writing effective rules, shaping behavior, hooks |
+
+### Understanding Code
+
+For when you're joining a codebase or need to build a deep mental model before making changes.
+
+| # | Guide | Description |
+|---|-------|-------------|
 | 03 | [Codebase Orientation](guides/03-codebase-orientation.md) | Big-picture analysis, entry points, request tracing, strategies by project type |
 | 04 | [Architecture & Dependencies](guides/04-architecture-and-dependencies.md) | Build systems, databases, dependency analysis, architecture diagrams |
 | 05 | [Codebase Archaeology](guides/05-codebase-archaeology.md) | Git history, pain points, cross-cutting concerns, tribal knowledge |
-| 06 | [Task Execution](guides/06-task-execution.md) | Plan mode, tests-first, blast radius, making changes, working with PRs |
-| 07 | [Diagrams & Documentation](guides/07-diagrams-and-documentation.md) | Mermaid diagram catalog, generating docs, onboarding materials |
-| 08 | [Ongoing Practices](guides/08-ongoing-practices.md) | Session management, CLAUDE.md evolution, verification habits, knowledge building |
-| 09 | [Anti-Patterns](guides/09-anti-patterns.md) | Common mistakes with examples, consequences, and fixes |
-| 10 | [Migration Planning](guides/10-migration-planning.md) | Assessing scope, incremental strategies, database migrations, rollback planning |
+
+### Daily Development
+
+The core workflow — getting a project running, making changes, debugging, reviewing, and testing.
+
+| # | Guide | Description |
+|---|-------|-------------|
 | 11 | [Local Environment Setup](guides/11-local-environment-setup.md) | From `git clone` to running — Docker, databases, services, troubleshooting setup failures |
+| 06 | [Task Execution](guides/06-task-execution.md) | Plan mode, tests-first, blast radius, making changes, working with PRs |
 | 12 | [Debugging & Troubleshooting](guides/12-debugging-and-troubleshooting.md) | Systematic debugging — logs, stack traces, performance, flaky tests, the debugging decision tree |
 | 13 | [Code Review](guides/13-code-review.md) | Reviewing PRs — understanding diffs, tracing impact, spotting issues, writing constructive comments |
 | 14 | [Testing Strategies](guides/14-testing-strategies.md) | Writing effective tests — unit/integration/e2e, edge cases, mocking, hard-to-test code |
+| 07 | [Diagrams & Documentation](guides/07-diagrams-and-documentation.md) | Mermaid diagram catalog, generating docs, onboarding materials |
+
+### Code Quality
+
+Guides for improving and maintaining code health — security, legacy code, tech debt, and accessibility.
+
+| # | Guide | Description |
+|---|-------|-------------|
 | 15 | [Security Analysis](guides/15-security-analysis.md) | Auditing for vulnerabilities — OWASP Top 10, auth flows, injection risks, dependency CVEs |
 | 16 | [Working with Legacy Code](guides/16-working-with-legacy-code.md) | Safely modifying untested code — characterization tests, strangler fig, incremental improvement |
-| 17 | [Collaboration & Team Workflows](guides/17-collaboration-and-team-workflows.md) | Team practices — shared CLAUDE.md, onboarding, pair programming, knowledge capture |
-| 18 | [API Design & Evolution](guides/18-api-design-and-evolution.md) | Designing APIs — REST/GraphQL conventions, versioning, backward compatibility, deprecation strategies |
-| 19 | [Data Modeling & Database Design](guides/19-data-modeling-and-database-design.md) | Schema design — normalization, indexing strategies, query optimization, ER modeling |
-| 20 | [CI/CD & Automation](guides/20-ci-cd-and-automation.md) | Pipelines — GitHub Actions, debugging builds, deployment strategies, integrating Claude into automation |
-| 21 | [Performance Optimization](guides/21-performance-optimization.md) | Proactive optimization — profiling, caching strategies, load testing, database tuning |
-| 22 | [Incident Response](guides/22-incident-response.md) | Production incidents — triage, rollback decisions, postmortems, on-call with Claude |
 | 23 | [Technical Debt Management](guides/23-technical-debt-management.md) | Systematic debt management — identifying, measuring, prioritizing, and paying down tech debt |
 | 24 | [Accessibility Auditing](guides/24-accessibility-auditing.md) | WCAG compliance — semantic HTML, keyboard navigation, screen readers, color contrast |
 
+### Validation & Trust
+
+Ensuring AI-generated code is correct, safe, and production-ready — from individual verification to team-wide governance.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 31 | [Validating AI-Generated Code](guides/31-validating-ai-generated-code.md) | The verification pyramid — tests, static analysis, manual review, adversarial testing, production monitoring |
+| 32 | [Trust & Governance](guides/32-trust-and-governance.md) | Progressive trust, team policies, audit trails, compliance (SOC 2, HIPAA, PCI), measuring AI code quality |
+| 36 | [Trusting Autogenerated Tests](guides/36-trusting-autogenerated-tests.md) | The test trust ladder — red-green verification, mutation testing, assertion quality, testing complex systems |
+
+### Systems Analysis
+
+Understanding and verifying how components interact — integration points, failure modes, dependency risks.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 37 | [Systems Integration Analysis](guides/37-systems-integration-analysis.md) | Mapping integrations, tracing data flows, contract testing, failure mode analysis, event-driven systems |
+| 38 | [Dependency & Risk Analysis](guides/38-dependency-and-risk-analysis.md) | Dependency health, supply chain security, vendor lock-in, license compliance, upgrade strategies |
+
+### Architecture & Design
+
+For building new systems or evolving existing ones — APIs, data models, and large-scale migrations.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 18 | [API Design & Evolution](guides/18-api-design-and-evolution.md) | Designing APIs — REST/GraphQL conventions, versioning, backward compatibility, deprecation strategies |
+| 19 | [Data Modeling & Database Design](guides/19-data-modeling-and-database-design.md) | Schema design — normalization, indexing strategies, query optimization, ER modeling |
+| 10 | [Migration Planning](guides/10-migration-planning.md) | Assessing scope, incremental strategies, database migrations, rollback planning |
+
+### Operations & Infrastructure
+
+CI/CD pipelines, performance, incident response, and cloud infrastructure — from estimation to architecture.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 20 | [CI/CD & Automation](guides/20-ci-cd-and-automation.md) | Pipelines — GitHub Actions, debugging builds, deployment strategies, integrating Claude into automation |
+| 21 | [Performance Optimization](guides/21-performance-optimization.md) | Proactive optimization — profiling, caching strategies, load testing, database tuning |
+| 22 | [Incident Response](guides/22-incident-response.md) | Production incidents — triage, rollback decisions, postmortems, on-call with Claude |
+| 29 | [Cloud Resource Estimation](guides/29-cloud-resource-estimation.md) | Capacity planning — traffic modeling, compute/storage/network math, cost forecasting, scaling strategies |
+| 30 | [Cloud Architecture & Infrastructure](guides/30-cloud-architecture-and-infrastructure.md) | Building reliable cloud systems — IaC, networking, containers, reliability patterns, observability |
+
+### Team & Process
+
+Scaling Claude Code across a team — collaboration workflows, sustainable habits, and common pitfalls.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 17 | [Collaboration & Team Workflows](guides/17-collaboration-and-team-workflows.md) | Team practices — shared CLAUDE.md, onboarding, pair programming, knowledge capture |
+| 08 | [Ongoing Practices](guides/08-ongoing-practices.md) | Session management, CLAUDE.md evolution, verification habits, knowledge building |
+| 09 | [Anti-Patterns](guides/09-anti-patterns.md) | Common mistakes with examples, consequences, and fixes |
+
+### Claude Code Mastery
+
+Deeper understanding of how Claude Code works — MCP connectivity, agentic patterns, and fixing prompt issues.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 25 | [MCP Servers](guides/25-mcp-servers.md) | Model Context Protocol — connecting Claude to databases, APIs, and external tools |
+| 26 | [AI Agents & Agentic Patterns](guides/26-ai-agents-and-agentic-patterns.md) | What agents really are, Claude Code as an agent, subagents, headless mode, multi-agent patterns |
+| 28 | [Troubleshooting Prompt Results](guides/28-troubleshooting-prompt-results.md) | Diagnosing bad output — root causes, before/after prompts, the prompt improvement checklist |
+
+### Advanced & Power User
+
+For experienced Claude Code users ready to coordinate multiple agents, automate workflows, and push the limits.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 33 | [Multi-Agent Coordination](guides/33-multi-agent-coordination.md) | Parallel agents, worktrees, task decomposition, conflict resolution, cross-repo coordination |
+| 34 | [Automation & Headless Workflows](guides/34-automation-and-headless-workflows.md) | CI/CD recipes, automated PR review, scheduled tasks, custom pipelines, safety guardrails |
+| 35 | [Power User Patterns](guides/35-power-user-patterns.md) | Context management, session strategies, custom MCP servers, hooks, advanced prompting, internal tooling |
+
+### Specialized Operations
+
+Deep dives into observability, distributed systems resilience, and monorepo management.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 39 | [Observability & Monitoring](guides/39-observability-and-monitoring.md) | Logs, metrics, traces — structured logging, alerting, dashboards, SLIs/SLOs, error budgets |
+| 43 | [Distributed Systems Patterns](guides/43-distributed-systems-patterns.md) | Circuit breakers, sagas, event sourcing, CQRS, idempotency, eventual consistency, bulkheads |
+| 42 | [Monorepo & Multi-Project Management](guides/42-monorepo-and-multi-project.md) | Nx/Turborepo/Bazel, affected analysis, cross-package refactoring, CI/CD for monorepos |
+
+### Planning & Communication
+
+Architecture decisions, estimation, technical writing, and working across roles.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 40 | [Architecture Decision Records & Technical Writing](guides/40-architecture-decision-records.md) | ADRs, RFCs, design docs, technical writing principles, documenting existing decisions |
+| 41 | [Estimation & Scoping](guides/41-estimation-and-scoping.md) | Codebase-informed estimates, task decomposition, range estimation, scoping features, spike analysis |
+| 46 | [Cross-Functional Collaboration](guides/46-cross-functional-collaboration.md) | Working with PMs, designers, QA — translating between roles, shared context, collaborative estimation |
+
+### Domain Tracks
+
+Specialized guides for frontend and data engineering workflows.
+
+| # | Guide | Description |
+|---|-------|-------------|
+| 44 | [Frontend Architecture](guides/44-frontend-architecture.md) | Component design, state management, design systems, bundle optimization, frontend testing |
+| 45 | [Data Engineering & Pipelines](guides/45-data-engineering-and-pipelines.md) | ETL/ELT, pipeline orchestration, data quality, schema evolution, warehouse design, data lineage |
+
 ---
 
-## Where to Start
+## Paths by Role
 
-**Brand new to Claude Code?**
-Start with [01 — Getting Started](guides/01-getting-started.md) and follow the guides in order.
+Not sure where to start? Find your situation below and follow the recommended path.
 
-**Already using Claude Code, new to a codebase?**
-Skim [02 — Setup & Configuration](guides/02-setup-and-configuration.md), then start at [03 — Codebase Orientation](guides/03-codebase-orientation.md).
+### Individual Contributor (New to Claude Code)
 
-**Working on a specific task right now?**
-Jump to [06 — Task Execution](guides/06-task-execution.md), but consider skimming [03](guides/03-codebase-orientation.md) first if the codebase is unfamiliar.
+You've never used Claude Code and want to get productive fast.
 
-**Want to improve your workflow?**
-Read [08 — Ongoing Practices](guides/08-ongoing-practices.md) and [09 — Anti-Patterns](guides/09-anti-patterns.md).
+```
+Foundation (01 → 02 → 27) → Daily Development (11 → 06 → 12)
+  → Validation & Trust (31) → Claude Code Mastery (28)
+```
 
-**Struggling to get a project running locally?**
-Jump to [11 — Local Environment Setup](guides/11-local-environment-setup.md) for help with Docker, databases, and service dependencies.
+### Developer Joining a New Codebase
 
-**Debugging a tricky issue?**
-Jump to [12 — Debugging & Troubleshooting](guides/12-debugging-and-troubleshooting.md) for a systematic approach to finding root causes.
+You know Claude Code but need to ramp up on an unfamiliar project.
 
-**Reviewing a PR or writing tests?**
-Jump to [13 — Code Review](guides/13-code-review.md) or [14 — Testing Strategies](guides/14-testing-strategies.md) for systematic approaches to review and test coverage.
+```
+Foundation (02 → 27) → Understanding Code (03 → 04 → 05)
+  → Daily Development (11 → 06) → Validation & Trust (31)
+```
 
-**Concerned about security?**
-Jump to [15 — Security Analysis](guides/15-security-analysis.md) for vulnerability auditing with the OWASP Top 10 checklist.
+### Senior Developer / Tech Lead
 
-**Working with old, untested code?**
-Jump to [16 — Working with Legacy Code](guides/16-working-with-legacy-code.md) for safe modification patterns.
+You're guiding architecture decisions, reviewing code, and setting team standards.
 
-**Setting up team workflows?**
-Jump to [17 — Collaboration & Team Workflows](guides/17-collaboration-and-team-workflows.md) for shared CLAUDE.md practices and onboarding.
+```
+Foundation (01 → 02 → 27) → Understanding Code (03 → 04)
+  → Systems Analysis (37 → 38) → Validation & Trust (31 → 32 → 36)
+  → Architecture & Design (18 → 19) → Planning (40 → 41)
+  → Code Quality (15 → 23) → Team & Process (17 → 08)
+```
 
-**Planning a large migration?**
-Jump to [10 — Migration Planning](guides/10-migration-planning.md) — but read [03](guides/03-codebase-orientation.md) and [06](guides/06-task-execution.md) first if the codebase is unfamiliar.
+### DevOps / Platform Engineer
 
-**Designing an API?**
-Jump to [18 — API Design & Evolution](guides/18-api-design-and-evolution.md) for REST/GraphQL conventions, versioning, and backward compatibility.
+You're responsible for CI/CD, infrastructure, cloud resources, and reliability.
 
-**Designing a database schema?**
-Jump to [19 — Data Modeling & Database Design](guides/19-data-modeling-and-database-design.md) for normalization, indexing, and query optimization.
+```
+Foundation (01 → 02 → 27) → Systems Analysis (37 → 38)
+  → Operations & Infrastructure (20 → 29 → 30 → 21 → 22)
+  → Specialized Ops (39 → 43) → Advanced (34 → 33)
+```
 
-**Setting up or fixing CI/CD pipelines?**
-Jump to [20 — CI/CD & Automation](guides/20-ci-cd-and-automation.md) for GitHub Actions, debugging builds, and deployment strategies.
+### Team Lead Rolling Out Claude Code
 
-**Optimizing for performance?**
-Jump to [21 — Performance Optimization](guides/21-performance-optimization.md) for profiling, caching, and load testing.
+You're introducing Claude Code to your team and want to set up shared workflows.
 
-**Dealing with a production incident?**
-Jump to [22 — Incident Response](guides/22-incident-response.md) for triage, rollback decisions, and blameless postmortems.
+```
+Foundation (01 → 02 → 27) → Validation & Trust (31 → 32)
+  → Team & Process (17 → 08 → 09) → Claude Code Mastery (25 → 26 → 28)
+```
 
-**Tackling technical debt?**
-Jump to [23 — Technical Debt Management](guides/23-technical-debt-management.md) for systematic identification, prioritization, and repayment.
+### Power User / Automation Engineer
 
-**Making your app accessible?**
-Jump to [24 — Accessibility Auditing](guides/24-accessibility-auditing.md) for WCAG compliance, keyboard navigation, and screen reader testing.
+You're already proficient with Claude Code and want to maximize throughput and automate everything possible.
+
+```
+Foundation (27) → Claude Code Mastery (25 → 26 → 28)
+  → Advanced (33 → 34 → 35) → Validation & Trust (31 → 32)
+```
+
+### Developer Working on Legacy Systems
+
+You're maintaining or modernizing old, complex, or poorly-documented code.
+
+```
+Foundation (01 → 02 → 27) → Understanding Code (03 → 04 → 05)
+  → Validation & Trust (31) → Code Quality (16 → 23)
+  → Daily Development (12 → 14) → Architecture & Design (10)
+```
+
+### Full-Stack Developer (Building New Features)
+
+You're designing and implementing features end-to-end.
+
+```
+Foundation (01 → 02 → 27) → Daily Development (06 → 14 → 12)
+  → Validation & Trust (31) → Architecture & Design (18 → 19)
+  → Domains (44) → Code Quality (15 → 24)
+```
+
+### Frontend Developer
+
+You're focused on UI, components, state management, and frontend performance.
+
+```
+Foundation (01 → 02 → 27) → Daily Development (11 → 06 → 12)
+  → Domains (44) → Code Quality (24 → 15) → Validation & Trust (31 → 36)
+```
+
+### Data Engineer
+
+You're building and maintaining data pipelines, warehouses, and data quality systems.
+
+```
+Foundation (01 → 02 → 27) → Understanding Code (03 → 04)
+  → Domains (45) → Architecture & Design (19) → Systems Analysis (37)
+  → Validation & Trust (31 → 36)
+```
+
+### Product Manager
+
+You work with engineers and want to use Claude for feasibility analysis, scoping, and communication.
+
+```
+Foundation (01 → 02) → Planning (41 → 46) → Understanding Code (03)
+```
+
+### QA Engineer
+
+You're responsible for test strategy, automation, and quality across the product.
+
+```
+Foundation (01 → 02 → 27) → Daily Development (14 → 12)
+  → Validation & Trust (31 → 36) → Planning (46)
+```
+
+---
+
+## Quick Reference
+
+Jump directly to the guide you need:
+
+| I need to... | Guide |
+|---|---|
+| Install and get started | [01 — Getting Started](guides/01-getting-started.md) |
+| Configure Claude for my project | [02 — Setup & Configuration](guides/02-setup-and-configuration.md) |
+| Write effective CLAUDE.md rules | [27 — Rules & Instructions](guides/27-rules-and-instructions.md) |
+| Understand an unfamiliar codebase | [03 — Codebase Orientation](guides/03-codebase-orientation.md) |
+| Map out architecture and dependencies | [04 — Architecture & Dependencies](guides/04-architecture-and-dependencies.md) |
+| Dig into git history and past decisions | [05 — Codebase Archaeology](guides/05-codebase-archaeology.md) |
+| Get a project running locally | [11 — Local Environment Setup](guides/11-local-environment-setup.md) |
+| Plan and execute a code change | [06 — Task Execution](guides/06-task-execution.md) |
+| Debug a tricky issue | [12 — Debugging & Troubleshooting](guides/12-debugging-and-troubleshooting.md) |
+| Review a pull request | [13 — Code Review](guides/13-code-review.md) |
+| Write or improve tests | [14 — Testing Strategies](guides/14-testing-strategies.md) |
+| Generate diagrams or docs | [07 — Diagrams & Documentation](guides/07-diagrams-and-documentation.md) |
+| Audit for security vulnerabilities | [15 — Security Analysis](guides/15-security-analysis.md) |
+| Safely modify legacy code | [16 — Working with Legacy Code](guides/16-working-with-legacy-code.md) |
+| Manage technical debt | [23 — Technical Debt Management](guides/23-technical-debt-management.md) |
+| Audit for accessibility | [24 — Accessibility Auditing](guides/24-accessibility-auditing.md) |
+| Design or evolve an API | [18 — API Design & Evolution](guides/18-api-design-and-evolution.md) |
+| Design a database schema | [19 — Data Modeling & Database Design](guides/19-data-modeling-and-database-design.md) |
+| Plan a large migration | [10 — Migration Planning](guides/10-migration-planning.md) |
+| Set up or fix CI/CD | [20 — CI/CD & Automation](guides/20-ci-cd-and-automation.md) |
+| Optimize performance | [21 — Performance Optimization](guides/21-performance-optimization.md) |
+| Handle a production incident | [22 — Incident Response](guides/22-incident-response.md) |
+| Estimate cloud resources and costs | [29 — Cloud Resource Estimation](guides/29-cloud-resource-estimation.md) |
+| Design cloud infrastructure | [30 — Cloud Architecture & Infrastructure](guides/30-cloud-architecture-and-infrastructure.md) |
+| Set up team workflows | [17 — Collaboration & Team Workflows](guides/17-collaboration-and-team-workflows.md) |
+| Build sustainable habits | [08 — Ongoing Practices](guides/08-ongoing-practices.md) |
+| Avoid common mistakes | [09 — Anti-Patterns](guides/09-anti-patterns.md) |
+| Connect Claude to external tools (MCP) | [25 — MCP Servers](guides/25-mcp-servers.md) |
+| Understand agents and agentic patterns | [26 — AI Agents & Agentic Patterns](guides/26-ai-agents-and-agentic-patterns.md) |
+| Verify AI-generated code is correct | [31 — Validating AI-Generated Code](guides/31-validating-ai-generated-code.md) |
+| Establish team trust and governance for AI code | [32 — Trust & Governance](guides/32-trust-and-governance.md) |
+| Trust AI-generated tests | [36 — Trusting Autogenerated Tests](guides/36-trusting-autogenerated-tests.md) |
+| Map system integrations and failure modes | [37 — Systems Integration Analysis](guides/37-systems-integration-analysis.md) |
+| Assess dependency health and supply chain risk | [38 — Dependency & Risk Analysis](guides/38-dependency-and-risk-analysis.md) |
+| Run multiple agents in parallel | [33 — Multi-Agent Coordination](guides/33-multi-agent-coordination.md) |
+| Automate tasks with headless Claude | [34 — Automation & Headless Workflows](guides/34-automation-and-headless-workflows.md) |
+| Level up as a power user | [35 — Power User Patterns](guides/35-power-user-patterns.md) |
+| Set up observability (logs, metrics, traces) | [39 — Observability & Monitoring](guides/39-observability-and-monitoring.md) |
+| Write ADRs, RFCs, or design docs | [40 — Architecture Decision Records](guides/40-architecture-decision-records.md) |
+| Estimate effort and scope features | [41 — Estimation & Scoping](guides/41-estimation-and-scoping.md) |
+| Navigate or manage a monorepo | [42 — Monorepo & Multi-Project Management](guides/42-monorepo-and-multi-project.md) |
+| Implement distributed systems patterns | [43 — Distributed Systems Patterns](guides/43-distributed-systems-patterns.md) |
+| Understand or improve frontend architecture | [44 — Frontend Architecture](guides/44-frontend-architecture.md) |
+| Build or maintain data pipelines | [45 — Data Engineering & Pipelines](guides/45-data-engineering-and-pipelines.md) |
+| Collaborate across roles (PM, design, QA) | [46 — Cross-Functional Collaboration](guides/46-cross-functional-collaboration.md) |
+| Fix bad prompt results | [28 — Troubleshooting Prompt Results](guides/28-troubleshooting-prompt-results.md) |
 
 ---
 
