@@ -545,4 +545,4 @@ Automated tests are a safety net, not a complete solution. Schedule regular manu
 
 ---
 
-**That completes the guide series.** Go back to the [main page](../README.md) to explore all guides or revisit earlier topics.
+**Next**: [25 — MCP Servers](25-mcp-servers.md) — Connect Claude to databases, APIs, and external tools with the Model Context Protocol.
