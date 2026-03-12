@@ -269,11 +269,11 @@ flowchart LR
     end
 
     subgraph "Contract"
-        C["Request: { items, address, paymentMethod }<br/>Response: { orderId, status, total }<br/>Errors: 400, 401, 422, 500"]
+        C["Request: items, address, paymentMethod<br/>Response: orderId, status, total<br/>Errors: 400, 401, 422, 500"]
     end
 
     subgraph "Consumer (Frontend)"
-        F[API Client<br/>createOrder()]
+        F["API Client<br/>createOrder()"]
     end
 
     P --- C --- F
